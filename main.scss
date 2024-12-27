@@ -1,0 +1,51 @@
+
+$primary-color: #4caf50;
+$secondary-color: #333;
+$light-color: #f7f7f7;
+$font-stack: 'Arial', sans-serif;
+
+@mixin transition($property) {
+    transition: $property 0.3s ease;
+}
+
+body {
+    font-family: $font-stack;
+    color: $secondary-color;
+    background-color: $light-color;
+    line-height: 1.6;
+    margin: 0;
+}
+
+header {
+    background-color: $primary-color;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: space-around;
+
+        li {
+            a {
+                color: white;
+                text-decoration: none;
+                @include transition(all);
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5rem;
+    }
+}
